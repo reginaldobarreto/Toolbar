@@ -5,6 +5,7 @@ import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
 
+import android.content.res.Resources;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
@@ -48,13 +49,16 @@ public class MainActivity extends AppCompatActivity {
 
         switch (item.getItemId()) {
             case R.id.menu_search:
-                Toast.makeText(this, "Search", Toast.LENGTH_LONG).show();
+                Toast.makeText(this, getResources().getString(R.string.search), Toast.LENGTH_SHORT).show();
+                return true;
+            case R.id.menu_bag:
+                Toast.makeText(this, getResources().getString(R.string.bag), Toast.LENGTH_SHORT).show();
                 return true;
             case R.id.menu_settings:
-                Toast.makeText(this, "Settings", Toast.LENGTH_LONG).show();
+                Toast.makeText(this, getResources().getString(R.string.settings), Toast.LENGTH_SHORT).show();
                 return true;
             case R.id.menu_about:
-                Toast.makeText(this, "About", Toast.LENGTH_LONG).show();
+                Toast.makeText(this, getResources().getString(R.string.about), Toast.LENGTH_SHORT).show();
                 return true;
             default:
                 return super.onOptionsItemSelected(item);
